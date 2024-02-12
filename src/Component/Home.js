@@ -55,9 +55,9 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
                     alt="not found"
                 />
                 <div id="Description2">
-                    <NavLink to={`/homedynamic/${item.id}`}>
+                    <NavLink to={`/homedynamic/${item.id}`}  style={{ textDecoration: 'none' }}>
 
-                    <h3>{item.title}</h3>
+                    <h3 className='dec'>{item.title}</h3>
                     </NavLink>
                 </div>
             </div>
@@ -117,9 +117,9 @@ Our collection of tour are themed by a style to help you get the most out of you
                     alt="not found"
                 />
                 <div id="Description2">
-                    <NavLink to={`/homedynamic/${item.id}`}>
+                    <NavLink to={`/homedynamic/${item.id}`}  style={{ textDecoration: 'none' }}>
 
-                    <h3>{item.title}</h3>
+                    <h3 className='dec'>{item.title}</h3>
                     </NavLink>
                 </div>
             </div>

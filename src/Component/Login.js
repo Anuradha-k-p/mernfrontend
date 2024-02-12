@@ -74,7 +74,7 @@ const Login = () => {
   return (
     <div className='full'>
       <div className='first'>
-        <img src='https://www.hdwallpapers.in/download/natur_water_sea_travel_sky_beach_turquoise_summer_island_4k_hd-HD.jpg'/>
+        <img src='https://www.hdwallpapers.in/download/natur_water_sea_travel_sky_beach_turquoise_summer_island_4k_hd-HD.jpg'  alt="missing"/>
 
       </div>
 

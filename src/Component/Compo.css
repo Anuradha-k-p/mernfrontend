@@ -35,11 +35,15 @@ body{
 
 
 
-
+.dec{
+   color: black;
+}
 
 #Description2 h3{
     text-align: center;
+    text-decoration: none;
 }
+
 
 .fx{
     box-sizing: border-box;
