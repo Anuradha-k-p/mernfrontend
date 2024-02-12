@@ -11,6 +11,8 @@ import ContextApi from '../Context/ContextData';
 import Header from '../Component/Header';
 import Login from '../Component/Login';
 import Register from '../Component/Register';
+import TrsmDynamic from './TrsmDynamic';
+import Homedynamic from './Homedynamic';
 
 const Navbar = () => {
 
@@ -76,7 +78,9 @@ const Navbar = () => {
         <Route path='/offers' element={<Offers/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='register' element={<Register/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/trsmdynamic/:id' element={<TrsmDynamic/>}/>
+        <Route path='/homedynamic/:id' element={<Homedynamic/>}/>
     </Routes>
 
     </ContextApi>

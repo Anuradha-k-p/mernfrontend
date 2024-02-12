@@ -8,6 +8,7 @@ import { FaGoogle } from "react-icons/fa";
 import { SiGooglechrome } from "react-icons/si";
 import { SiGmail } from "react-icons/si";
 import "./Login.css"
+import Header from './Header';
 
 const Register = () => {
   const [rdata, rdataset] = useState({
@@ -26,8 +27,8 @@ const Register = () => {
   const datasubmit = (e) => {
     e.preventDefault()
     axios
-      // .post('http://localhost:2828/api/register', rdata)
-      .post('https://majarproject.onrender.com/api/register', rdata)
+      .post('http://localhost:2828/api/register', rdata)
+      // .post('https://majarproject.onrender.com/api/register', rdata)
 
       .then((res) => {
 
@@ -77,7 +78,7 @@ const Register = () => {
     <div className='full'>
 
       <div className='first'>
-        <img src='https://www.hdwallpapers.in/download/natur_water_sea_travel_sky_beach_turquoise_summer_island_4k_hd-HD.jpg'/>
+        <img src='https://www.hdwallpapers.in/download/natur_water_sea_travel_sky_beach_turquoise_summer_island_4k_hd-HD.jpg'  alt="not found"/>
 
       </div>
 
@@ -94,7 +95,7 @@ const Register = () => {
       
 
           <label htmlFor='username'>Username :    </label><br/>
-          <input type='text' name='username' value={rdata.username} onChange={appdata} required /><br/>
+          <input type='text' name='username' value={rdata.username} onChange={appdata} required  /><br/>
     
 
 
@@ -142,6 +143,7 @@ const Register = () => {
       </div>
 
       </div>
+      <Header username={rdata.username} />
       </>
   )
 

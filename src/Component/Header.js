@@ -4,7 +4,18 @@ import { NavLink } from 'react-router-dom';
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaPhoneVolume } from "react-icons/fa6";
 
-const Header = () => {
+const Header = ({username}) => {
+    const token = localStorage.getItem('token');
+
+    const renderIcon = token && username ? (
+        <div className='icon'>{username.charAt(0)}</div>
+      ) : (
+        <IoPersonCircleSharp className='icon'/>
+      );
+
+
+
+
     return(
         <>
         <div className='header'>
@@ -22,12 +33,9 @@ const Header = () => {
                 <FaPhoneVolume/>: 1234567890
             </div>
             <div className='login'>
-
-              <NavLink to='/login'>
-              <IoPersonCircleSharp className='icon'/>
-                
+                <NavLink to='/login'>
+                    {renderIcon}
                 </NavLink>  
-
             </div>
 
 

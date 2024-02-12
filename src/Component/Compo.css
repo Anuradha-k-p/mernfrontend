@@ -2,6 +2,11 @@
 body{
     font-family: 'Montserrat Alternates', sans-serif;
 }
+.blur {
+    filter: blur(10px); 
+}
+
+
 .container1{
     width: 100%;
     display: flex;
@@ -22,6 +27,12 @@ body{
     box-shadow: 1px 0 6px rgba(0,0,0,.2);
     margin-bottom: 5%;
 }
+
+.slider{
+    width: 40%;
+}
+
+
 
 
 
@@ -80,6 +91,18 @@ color: #B81704;
  box-shadow: 1px 1px 5px gray ;
 }
 
+
+.access{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.access img{
+    height: 60%;
+    width: 60%;
+}
 
 
 

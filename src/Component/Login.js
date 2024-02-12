@@ -24,8 +24,8 @@ const Login = () => {
     e.preventDefault()
     axios
 
-    // .post('http://localhost:2828/api/login',ldata)
-    .post('https://majarproject.onrender.com/api/login',ldata)
+    .post('http://localhost:2828/api/login',ldata)
+    // .post('https://majarproject.onrender.com/api/login',ldata)
 
 
       .then((res) => {

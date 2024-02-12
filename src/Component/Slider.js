@@ -1,17 +1,30 @@
-import Slider from 'react-animated-slider';
-import './horizontal.css';
+// ImageSlider.js
 
-<Slider autoplay={3000}>
-	{content.map((item, index) => (
-		<div
-			key={index}
-			style={{ background: `url('${item.image}') no-repeat center center` }}
-		>
-			<div className="center">
-				<h1>{item.title}</h1>
-				<p>{item.description}</p>
-				<button>{item.button}</button>
-			</div>
-		</div>
-	))}
-</Slider>
+import React, { useState } from 'react';
+import './Horizontal.css';
+
+const ImageSlider = ({ images }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((currentSlide + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((currentSlide - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="slider">
+      <div className="slides" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+        {images.map((image, index) => (
+          <img key={index} src={image} alt={`Slide ${index + 1}`} />
+        ))}
+      </div>
+      <button className="prev" onClick={prevSlide}>&#10094; </button>
+      <button className="next" onClick={nextSlide}>&#10095; </button>
+    </div>
+  );
+};
+
+export default ImageSlider;

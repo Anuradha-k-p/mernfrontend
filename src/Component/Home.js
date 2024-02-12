@@ -2,6 +2,8 @@
 import React, { useContext } from 'react';
 import { Store } from '../Context/ContextData';
 import "./Compo.css"
+import { NavLink } from 'react-router-dom';
+
 
 
 const Home = () => {
@@ -12,6 +14,9 @@ const Home = () => {
     return(
         <>
         <div className='fx'>
+           
+
+
             <h1>The India Tourism - Guided & Customized Private Tour to India</h1>
       <p> India Tourism is an unequivocally welcoming nation, that bestows reverence and love for its visitors. A nation which follows only one belief blindly "Atithi Devo Bhava" which means "Guest is equivalent to God". There is so much to discover, a land with varied civilizations, deep-rooted ideologies. uncountable faiths, that is also related to particular historical stories. India Tourism provides an outstanding rich heritage, tasty cuisines from numerous parts of the world, a multitude of enticing sightseeing spots, and much more while visiting this beautiful country. An avid traveler will simply find his place here.</p>
 
@@ -50,7 +55,10 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
                     alt="not found"
                 />
                 <div id="Description2">
+                    <NavLink to={`/homedynamic/${item.id}`}>
+
                     <h3>{item.title}</h3>
+                    </NavLink>
                 </div>
             </div>
         );
@@ -88,6 +96,44 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
     })}
 
 </div>
+<br/><br/>
+
+<h2>Choose Your Style of Tour Packages</h2>
+
+<p>
+
+Our collection of tour are themed by a style to help you get the most out of your wonderful holiday in India whether you're looking for a small group tour, private tailor made holiday to see India, These packages are meant to cater every of your interest, and that too without hampering your comfort in the travel. The intriguing land of India has so much to explore. 
+  </p>
+  <div className='container1'>
+
+     
+{received.filter((item) => item.category === "home" && item.id >= 77 && item.id <= 80)
+
+    .map((item, index) => {
+        return (
+            <div className="container" key={index}>
+                <img
+                    src={item.photo} 
+                    alt="not found"
+                />
+                <div id="Description2">
+                    <NavLink to={`/homedynamic/${item.id}`}>
+
+                    <h3>{item.title}</h3>
+                    </NavLink>
+                </div>
+            </div>
+        );
+    })}
+
+</div>
+
+
+
+
+
+
+
 
 
 
