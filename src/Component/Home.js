@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Store } from '../Context/ContextData';
 import "./Compo.css"
 import { NavLink } from 'react-router-dom';
+import Crousal from './Slider';
 
 
 
@@ -13,12 +14,18 @@ const Home = () => {
 
     return(
         <>
-        <div className='fx'>
-           
 
+        <div className='fx'>
+<Crousal className='cr'/>
+
+            
+  
+
+       
+         
 
             <h1>The India Tourism - Guided & Customized Private Tour to India</h1>
-      <p> India Tourism is an unequivocally welcoming nation, that bestows reverence and love for its visitors. A nation which follows only one belief blindly "Atithi Devo Bhava" which means "Guest is equivalent to God". There is so much to discover, a land with varied civilizations, deep-rooted ideologies. uncountable faiths, that is also related to particular historical stories. India Tourism provides an outstanding rich heritage, tasty cuisines from numerous parts of the world, a multitude of enticing sightseeing spots, and much more while visiting this beautiful country. An avid traveler will simply find his place here.</p>
+      <p> <b className='clr'>India Tourism </b>is an unequivocally welcoming nation, that bestows reverence and love for its visitors. A nation which follows only one belief blindly<b> "Atithi Devo Bhava"</b> which means "Guest is equivalent to God". There is so much to discover, a land with varied civilizations, deep-rooted ideologies. uncountable faiths, that is also related to particular historical stories.<b className='clr'>India Tourism </b>provides an outstanding rich heritage, tasty cuisines from numerous parts of the world, a multitude of enticing sightseeing spots, and much more while visiting this beautiful country. An avid traveler will simply find his place here.</p>
 
 <p className='clr'>Culture-India Tourism</p>
 
@@ -32,7 +39,7 @@ const Home = () => {
 
 <p>Well, every part of the world has a different tole to tell, with enchanting elegance and majestic culture, Northern India is truly blessed, one can get absolutely soaked in valleys and waterfalls and lush greenery of Himalayan ranges. The western part of the world has a striking beauty of architectural wonder, and what people enjoy about this place is the contemporary lifestyle. And we're talking about the regions of the Sunderbans or the eastern part of India, well, no one can argue that this area is blessed with the scenic beauty of high hills, ondulating rivers and waterfalls. Finally, the southern area is blessed with planting and foliage loads, an exotic destination in the entire world, a combination of enticing beach sites, Tourists continue to see hills and waterfalls again and again! There are plenty of great reasons to visit India Tourism, so we have already offered a mini-tour.</p>
 
-
+<br/>
 
   <h2>Find your Ideal Tour Packages</h2>
 
@@ -40,7 +47,7 @@ const Home = () => {
 
 Travel in India is like nothing you’ve ever experienced, from the magnificence Taj Mahal to the highlights of Kerala, Goa and India, this is a great trip for first-time visitors as it encompasses all of the major tourist destinations.
 
-  </p>
+  </p><br/>
 
 <div className='container1'>
 
@@ -64,10 +71,10 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
         );
     })}
 
-</div>
+</div><br/>
 
 
-<h2>Find your Perfect Holiday Destination</h2>
+<h2>Find your Perfect Holiday Destination</h2><br/>
 <p>
 
 Check out this India most iconic heritage, natural beauty, colourful, cultural and spiritual Attractions India. Beaches, backwaters, vast stretches of deserts, snow-laden peaks and Indian wildlife sanctuaries make the country one of the best winter destinations.  
@@ -75,7 +82,7 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
   </p>
 
 
-
+  <br/>
 
 <div className='container1'>
 
@@ -98,12 +105,12 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
 </div>
 <br/><br/>
 
-<h2>Choose Your Style of Tour Packages</h2>
+<h2>Choose Your Style of Tour Packages</h2><br/>
 
 <p>
 
 Our collection of tour are themed by a style to help you get the most out of your wonderful holiday in India whether you're looking for a small group tour, private tailor made holiday to see India, These packages are meant to cater every of your interest, and that too without hampering your comfort in the travel. The intriguing land of India has so much to explore. 
-  </p>
+  </p><br/>
   <div className='container1'>
 
      

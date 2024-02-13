@@ -13,6 +13,7 @@ import Login from '../Component/Login';
 import Register from '../Component/Register';
 import TrsmDynamic from './TrsmDynamic';
 import Homedynamic from './Homedynamic';
+import Footer from '../Component/Footer';
 
 const Navbar = () => {
 
@@ -84,6 +85,7 @@ const Navbar = () => {
     </Routes>
 
     </ContextApi>
+    <Footer/>
 
         
         </>

@@ -21,21 +21,7 @@ const Packages = () => {
     //const [showBlur, setShowBlur] = useState(false);
     
    
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     if (!token) {
-    //         alert('Please login to access this page.');
-    //         setShowBlur(true); 
-    //         // Redirect to login page or take appropriate action
-    //         // For example, you can use react-router-dom to navigate to the login page
-    //         // history.push('/login');
-    //         navigate('/login');
-    //     }
-    // },[showBlur]);
-
-    // if (!received) {
-    //     return <h1>this content is not accesible for you</h1>; // Or loading indicator
-    // }
+   
 
     return (
       token?  <>

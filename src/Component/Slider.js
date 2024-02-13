@@ -1,30 +1,41 @@
-// ImageSlider.js
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Compo.css"
 
-import React, { useState } from 'react';
-import './Horizontal.css';
+export default function Crousal(){
+    const [data, setData] = useState([]);
 
-const ImageSlider = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+    useEffect(() => {
+      axios
+        .get("http://localhost:2828/api/tour")
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((err) => console.log(err, "error"));
+    }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((currentSlide + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((currentSlide - 1 + images.length) % images.length);
-  };
-
-  return (
-    <div className="slider">
-      <div className="slides" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-        {images.map((image, index) => (
-          <img key={index} src={image} alt={`Slide ${index + 1}`} />
-        ))}
-      </div>
-      <button className="prev" onClick={prevSlide}>&#10094; </button>
-      <button className="next" onClick={nextSlide}>&#10095; </button>
-    </div>
-  );
-};
-
-export default ImageSlider;
+    return(
+        <div className="carousel-container" style={{ width: '100%', height: '60vh' }}>
+            <Carousel
+                key={data.length} 
+                autoPlay
+                className="slider"
+                infiniteLoop={true}
+                useKeyboardArrows
+                stopOnHover={false}
+                showStatus={false}
+                showIndicators={false}
+                showThumbs={false}
+                interval={3000}
+            >
+                {data.filter((item)=>item.category==="crousal").map((images, index) => (
+                    <div key={index} className="cr">
+                        <img src={images.photo} alt="not found" />
+                    </div>
+                ))}
+            </Carousel>
+        </div>
+    );
+}

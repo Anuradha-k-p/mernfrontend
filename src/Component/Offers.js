@@ -1,13 +1,26 @@
 import React, { useContext } from 'react';
 import { Store } from '../Context/ContextData';
 import "./Compo.css"
+import { useNavigate } from 'react-router-dom';
 
 
 const Offers = () => {
     const [received] = useContext(Store);
     console.log(received)
+    const navigate = useNavigate();
+  
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+       
+        alert('Access denied. Please login to access this page.');
+       
+        navigate('/login');
+        
+    }
 
     return(
+        token?  
         <>
         <div className='fx'>
 
@@ -22,7 +35,7 @@ const Offers = () => {
         <div className='container1'>
 
      
-{received.filter((item) => item.category === "package")
+{received.filter((item) => item.category === "offer")
     .map((item, index) => {
         return (
             <div className="container" key={index}>
@@ -44,6 +57,7 @@ const Offers = () => {
         </div>
         
         </>
+        :<div className='access'><img src='https://media.istockphoto.com/id/1877502857/vector/secure-personal-data-using-password-protection-cyber-security-network-data-security.jpg?s=2048x2048&w=is&k=20&c=XWf4BcAQ4_UQ9uoo-NLzq2VLnpAk5ppteLlXNa6gOus=' alt='denied'/></div>
     )
 }
 

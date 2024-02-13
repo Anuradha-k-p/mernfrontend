@@ -3,8 +3,21 @@ import { useParams } from 'react-router-dom';
 import { Store } from '../Context/ContextData';
 
 const Homedynamic = () => {
-    const{id} =useParams();
+    const{id ,category} =useParams();
     const [received] = useContext(Store);
+
+    const selecteditem  = received.filter(item => item.id=== parseInt(id,5));
+    console.log(selecteditem)
+
+    const categoryData = selecteditem.filter(item => item.category === category )
+    console.log(categoryData)
+
+
+
+
+
+   
+    
     return(
         <>
         <div className='fx'>
@@ -20,6 +33,8 @@ const Homedynamic = () => {
 
 
 
+
+
                     
                     
 
@@ -28,6 +43,13 @@ const Homedynamic = () => {
 
                      )})
             }
+
+          
+
+
+
+
+            
 
 
 

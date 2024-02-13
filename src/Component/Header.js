@@ -1,20 +1,36 @@
 import React from 'react';
-import "./Compo.css"
+import "./Compo.css";
+import { useEffect,useCallback} from 'react';
+
 import { NavLink } from 'react-router-dom';
-import { IoPersonCircleSharp } from "react-icons/io5";
+import { IoPersonCircleSharp, IoLogOutSharp } from 'react-icons/io5'; 
 import { FaPhoneVolume } from "react-icons/fa6";
 
-const Header = ({username}) => {
+const Header = () => {
     const token = localStorage.getItem('token');
-
-    const renderIcon = token && username ? (
-        <div className='icon'>{username.charAt(0)}</div>
-      ) : (
-        <IoPersonCircleSharp className='icon'/>
-      );
-
-
-
+    const logout = useCallback(() => {
+        localStorage.removeItem('token');
+      }, []);
+    
+      useEffect(() => {
+        // Check if token exists in localStorage
+        const token = localStorage.getItem('token');
+        if (token) {
+          // If token exists, set the logout functionality
+          const loginLink = document.getElementById('login-link');
+          if (loginLink) {
+            loginLink.addEventListener('click', logout);
+          }
+        }
+        
+        // Cleanup function to remove event listener
+        return () => {
+          const loginLink = document.getElementById('login-link');
+          if (loginLink) {
+            loginLink.removeEventListener('click', logout);
+          }
+        };
+      }, [logout]);
 
     return(
         <>
@@ -32,11 +48,27 @@ const Header = ({username}) => {
                 <p>Email : info@theindiatourism.com</p>
                 <FaPhoneVolume/>: 1234567890
             </div>
-            <div className='login'>
-                <NavLink to='/login'>
-                    {renderIcon}
-                </NavLink>  
-            </div>
+            {/* <div className='login'>
+      
+        <NavLink to='/login'>
+          <IoPersonCircleSharp className='icon'/>
+        </NavLink>
+
+    </div> */}
+          <div className='login'>
+      <NavLink to='/login' id='login-link'>
+        {localStorage.getItem('token') ? (
+          // If token exists, render logout icon
+          <IoLogOutSharp className='icon'/>
+        ) : (
+          // If no token, render login icon
+          <IoPersonCircleSharp className='icon'/>
+        )}
+
+
+          {/* {token ?  <IoPersonCircleSharp className='icon'/> : <IoLogOutSharp className='icon'/>} */}
+      </NavLink>
+    </div>
 
 
         </div>

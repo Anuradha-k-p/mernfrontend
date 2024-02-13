@@ -27,8 +27,8 @@ const Register = () => {
   const datasubmit = (e) => {
     e.preventDefault()
     axios
-      .post('http://localhost:2828/api/register', rdata)
-      // .post('https://majarproject.onrender.com/api/register', rdata)
+      // .post('http://localhost:2828/api/register', rdata)
+      .post('https://majarproject.onrender.com/api/register', rdata)
 
       .then((res) => {
 

@@ -13,7 +13,8 @@ const ContextApi=(props)=>{
     const fetchdata =async()=>{
       try{
    
-         const response = await axios.get('http://localhost:2828/api/tour');
+        //  const response = await axios.get('http://localhost:2828/api/tour');
+        const response = await axios.get('https://majarproject.onrender.com/api/tour');
 
         setData(response.data);
       }
