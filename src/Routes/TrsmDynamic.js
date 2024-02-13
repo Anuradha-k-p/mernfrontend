@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Store } from '../Context/ContextData';
+import { BsTrainLightrailFrontFill } from "react-icons/bs";
+import { IoAirplane } from "react-icons/io5";
+import { FaBusAlt } from "react-icons/fa";
 
 
 const TrsmDynamic = () => {
@@ -21,18 +24,18 @@ const TrsmDynamic = () => {
                     <>
                     <h1>{item.title}</h1>
                     <p>{item.des}</p>
-                    <b>History</b><br/>
+                    <b className='clr'>History</b><br/>
                     <p>{item.history}</p>
-                    <b>Fairs & Festivals</b><br/>
+                    <b className='clr'>Fairs & Festivals</b><br/>
                     <p>{item.fair}</p>
-                    <b>Best Time to Visit</b><br/>
+                    <b className='clr'>Best Time to Visit</b><br/>
                     <p>{item.time}</p>
-                    <b>How to Reach :-</b><br/><br/>
-                    <b>BY AIR - </b><p>{item.air}</p>
-                    <b> BY RAIL - </b><p>{item.rail}</p>
-                    <b> BY ROAD - </b><p>{item.road}</p>
+                    <b className='clr'>How to Reach :-</b><br/><br/>
+                    <b className='clr'> <IoAirplane />   BY AIR - </b><p>{item.air}</p>
+                    <b className='clr'> <BsTrainLightrailFrontFill />   BY RAIL - </b><p>{item.rail}</p>
+                    <b className='clr'> <FaBusAlt />   BY ROAD - </b><p>{item.road}</p>
                     <br/>
-                    <b>Tourist Attractions</b>
+                    <b className='clr'>Tourist Attractions</b>
                     <p>{item.attraction}</p>
 
 
